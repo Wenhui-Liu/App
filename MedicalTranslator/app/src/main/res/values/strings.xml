@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Medical Translator App</string>
+
+    <string name="draw_open">Open Navigation Drawer</string>
+    <string name="draw_close">Close Navigation Drawer</string>
+
+</resources>
