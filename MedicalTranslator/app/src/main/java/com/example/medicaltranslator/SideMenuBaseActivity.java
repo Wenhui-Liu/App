@@ -15,13 +15,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class SideMenuBaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout side_menu_draw_layout;
-
+    NavigationView menu_navigationView;
     @Override
     public void setContentView(View view) {
         side_menu_draw_layout = (DrawerLayout)getLayoutInflater().inflate(R.layout.side_menu_base,null);
@@ -31,8 +32,11 @@ public class SideMenuBaseActivity extends AppCompatActivity implements Navigatio
 
         Toolbar toolbar = side_menu_draw_layout.findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
+//        TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.main_toolbar_title);
+//        toolbarTitle.setText("Medical Translator App");
+//        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        NavigationView menu_navigationView = side_menu_draw_layout.findViewById(R.id.nav_menu_view);
+        menu_navigationView = side_menu_draw_layout.findViewById(R.id.nav_menu_view);
         menu_navigationView.setNavigationItemSelectedListener(this);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,side_menu_draw_layout,toolbar,R.string.draw_open,R.string.draw_close);
@@ -58,6 +62,10 @@ public class SideMenuBaseActivity extends AppCompatActivity implements Navigatio
                 break;
             case R.id.nav_setting:
                 startActivity(new Intent(this, SideMenuSettingActivity.class));
+                overridePendingTransition(0,0);
+                break;
+            case R.id.nav_help:
+                startActivity(new Intent(this, SideMenuHelpActivity.class));
                 overridePendingTransition(0,0);
                 break;
             case R.id.nav_logout:

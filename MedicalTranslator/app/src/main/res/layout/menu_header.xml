@@ -4,13 +4,15 @@
     android:layout_height="200dp"
     android:background="@color/light_blue">
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageButton
         android:id="@+id/default_profile_pic"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="70dp"
-        android:src="@color/white"/>
+        android:scaleType="centerInside"
+        android:background="@drawable/default_user_profile"
+        android:src="@drawable/ic_default_user"/>
     <TextView
         android:id="@+id/sign_in_txt"
         android:layout_width="wrap_content"
@@ -20,8 +22,18 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_below="@id/default_profile_pic"/>
+        android:layout_marginStart="20dp"
+        android:layout_below="@id/default_profile_pic"
+        android:clickable="true"
+        android:focusable="true" />
+<!--set text clickable same as the circle button-->
+<!--    android:clickable="true"-->
 
+<!--    TextView tv=(TextView)findViewById(R.id.text);-->
+<!--    tv.setOnClickListener(new OnClickListener() {-->
+<!--    public void onClick(View v) {-->
+<!--    //perform your action here-->
+<!--    }-->
+<!--    });-->
 
 </RelativeLayout>

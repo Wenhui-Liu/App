@@ -12,4 +12,8 @@
     <color name="searchbar_words">#999999</color>
     <color name="light_gray">#989797</color>
     <color name="underline">#D8D6D6</color>
+    <color name="account_background">#85C1E9</color>
+    <color name="account_camera">#F79B55</color>
+    <color name="account_buttons">#2699E6</color>
+    <color name="white_gray">#DEDEDF</color>
 </resources>

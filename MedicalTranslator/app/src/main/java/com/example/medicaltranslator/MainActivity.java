@@ -94,7 +94,7 @@ public class MainActivity extends SideMenuBaseActivity {
         storage_permission = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
         activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
-        allocateActivityTitle("Main Page");
+        allocateActivityTitle("Medical Translator App");
         setContentView(activityMainBinding.getRoot());
 
 //        recognize_product_name_txt = findViewById(R.id.recognized_product_name_etxt);
