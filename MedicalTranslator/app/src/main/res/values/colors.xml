@@ -16,4 +16,5 @@
     <color name="account_camera">#F79B55</color>
     <color name="account_buttons">#2699E6</color>
     <color name="white_gray">#DEDEDF</color>
+    <color name="deep_gray">#686868</color>
 </resources>

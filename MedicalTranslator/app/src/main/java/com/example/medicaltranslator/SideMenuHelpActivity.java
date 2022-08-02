@@ -20,7 +20,7 @@ public class SideMenuHelpActivity extends SideMenuBaseActivity {
     ExpandableListView expandableListView;
     List<String> list_group;
     HashMap<String,List<String>> list_items;
-    TheAdapter adapter;
+    TheAdapterForHelp adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class SideMenuHelpActivity extends SideMenuBaseActivity {
         expandableListView = findViewById(R.id.expandable_listView);
         list_group = new ArrayList<>();
         list_items = new HashMap<>();
-        adapter = new TheAdapter(this,list_group,list_items);
+        adapter = new TheAdapterForHelp(this,list_group,list_items);
         expandableListView.setAdapter(adapter);
         initialListData();
     }

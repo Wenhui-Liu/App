@@ -5,9 +5,15 @@
       <map>
         <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/drawable/default_user_profile.xml" value="0.1215" />
         <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.222" />
+        <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/drawable/ic_image_32.xml" value="0.193" />
+        <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/drawable/ic_keyboard_arrow_down_24.xml" value="0.1215" />
+        <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/drawable/ic_keyboard_arrow_right_24.xml" value="0.193" />
         <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/drawable/ic_menu_32.xml" value="0.222" />
         <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/drawable/ic_person_24.xml" value="0.1215" />
         <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/drawable/ic_search_24.xml" value="0.222" />
+        <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/drawable/ic_star_32.xml" value="0.193" />
+        <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/drawable/ic_star_outline_32.xml" value="0.193" />
+        <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/drawable/round_background_setting_page.xml" value="0.193" />
         <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/drawable/round_button.xml" value="0.193" />
         <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/drawable/round_button_help_page.xml" value="0.1215" />
         <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/drawable/round_rectangle_button.xml" value="0.193" />
@@ -30,6 +36,7 @@
         <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/layout/menu_login.xml" value="0.358695652173913" />
         <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/layout/menu_saved.xml" value="0.358695652173913" />
         <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/layout/menu_setting.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/layout/saved_favorite_item.xml" value="0.358695652173913" />
         <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/layout/side_menu_account.xml" value="0.33" />
         <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/layout/side_menu_base.xml" value="0.5" />
         <entry key="..\:/Users/lwhro/AndroidStudioProjects/MedicalTranslator/app/src/main/res/layout/side_menu_content_layout.xml" value="0.2376068376068376" />

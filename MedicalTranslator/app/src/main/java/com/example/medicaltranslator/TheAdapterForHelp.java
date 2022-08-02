@@ -5,18 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.List;
 
-public class TheAdapter extends BaseExpandableListAdapter {
+public class TheAdapterForHelp extends BaseExpandableListAdapter {
 
     Context context;
     List<String> list_group;
     HashMap<String, List<String>> list_items;
 
-    public TheAdapter(Context context, List<String> list_group, HashMap<String, List<String>> list_items)
+    public TheAdapterForHelp(Context context, List<String> list_group, HashMap<String, List<String>> list_items)
     {
         this.context = context;
         this.list_group = list_group;
@@ -68,6 +69,15 @@ public class TheAdapter extends BaseExpandableListAdapter {
         }
         TextView textView = view.findViewById(R.id.help_list_parent);
         textView.setText(parent_group);
+
+        ImageView imageView = (ImageView) view.findViewById(R.id.help_list_parent_arrow);
+        if (isExpanded == true) {
+            imageView.setRotation(180);
+        }
+        else if (isExpanded == false){
+            imageView.setRotation(0);
+        }
+
         return view;
     }
 
