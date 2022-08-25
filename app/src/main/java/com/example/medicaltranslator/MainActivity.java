@@ -3,9 +3,11 @@ package com.example.medicaltranslator;
 import android.Manifest;
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
@@ -34,6 +36,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.medicaltranslator.database.MedicalBaseHelper;
 import com.example.medicaltranslator.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -60,7 +63,6 @@ public class MainActivity extends SideMenuBaseActivity {
     ActionBarDrawerToggle drawerToggle;
     ImageButton searchImage_btn;
 
-
 //    EditText recognize_product_name_txt;
     protected String readText = "\"   \"";
 
@@ -84,6 +86,7 @@ public class MainActivity extends SideMenuBaseActivity {
 //        }
 //        return super.onOptionsItemSelected(item);
 //    }
+    private SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +99,9 @@ public class MainActivity extends SideMenuBaseActivity {
         activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         allocateActivityTitle("Medical Translator App");
         setContentView(activityMainBinding.getRoot());
+
+        // <emulator>/data/data/com.example.medicaltranslator/databases/medical.db
+        db = new MedicalBaseHelper(getApplicationContext()).getWritableDatabase();
 
 //        recognize_product_name_txt = findViewById(R.id.recognized_product_name_etxt);
 //        recognize_product_name_txt.setText(readText);

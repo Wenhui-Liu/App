@@ -22,7 +22,6 @@ import com.google.mlkit.vision.text.TextRecognizer;
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
 
 public class ItemListActivity extends MainActivity {
-
     LinearLayout itemList_linearLayout;
     // TODO: Why EditText? Why not TextView?
     EditText recognize_product_name_txt;
