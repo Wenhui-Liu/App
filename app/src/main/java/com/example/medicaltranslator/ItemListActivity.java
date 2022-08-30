@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +14,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.medicaltranslator.database.MedicalBaseHelper;
+import com.example.medicaltranslator.database.MedicalDbSchema;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -26,10 +31,15 @@ public class ItemListActivity extends MainActivity {
     // TODO: Why EditText? Why not TextView?
     EditText recognize_product_name_txt;
 
+    private SQLiteDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_lists);
+
+        // get database here
+        db = new MedicalBaseHelper(getApplicationContext()).getReadableDatabase();
 
 //        itemList_linearLayout = findViewById(R.id.item_lists_page);
         recognize_product_name_txt = findViewById(R.id.recognized_product_name_etxt);
@@ -61,11 +71,18 @@ public class ItemListActivity extends MainActivity {
 
                             recognize_product_name_txt.setText(word);
 
-                            /*
-                            TODO: Do any database stuff here
-                             I think this is async so anything after recognizeImageText() in the main
-                             will run before this
-                            */
+                            // Run query get result
+                            String table = MedicalDbSchema.MedicalTable.NAME;
+                            Cursor cursor = db.rawQuery("SELECT * FROM " + MedicalDbSchema.MedicalTable.NAME, null);
+
+                            // TODO: do something with the table rows result (English, Chinese)
+                            if(cursor.moveToFirst()) {
+                                do {
+                                    String medicineENG = cursor.getString(cursor.getColumnIndex(MedicalDbSchema.MedicalTable.Cols.ENG_NAME));
+                                    String medicineCN = cursor.getString(cursor.getColumnIndex(MedicalDbSchema.MedicalTable.Cols.CN_NAME));
+                                } while (cursor.moveToNext());
+                            }
+
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
