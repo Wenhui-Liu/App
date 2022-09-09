@@ -5,7 +5,7 @@
     <string name="draw_close">Close Navigation Drawer</string>
 
 
-    <!-- Help Expandable words   -->
+    <!-- Help Page Expandable words   -->
     <string name="questionA_1">Question 1</string>
     <string name="questionA_2">Question 2</string>
     <string name="questionA_3">Question 3</string>
@@ -13,7 +13,7 @@
     <string name="questionA_5">Question 5</string>
 
     <string-array name="questionA_1">
-        <item>Q1.......</item>
+        <item>Q1.......\nQ1.1......</item>
     </string-array>
     <string-array name="questionA_2">
         <item>Q2.......</item>
