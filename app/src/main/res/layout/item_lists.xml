@@ -50,14 +50,13 @@
             android:id="@+id/recognized_product_name_etxt"
             android:layout_width="match_parent"
             android:layout_height="26dp"
-            android:text="&quot;   A&quot;"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:background="@null"
-            android:textColor="@color/light_gray"
-            android:textSize="12sp"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp" />
+            android:textColor="@color/light_gray"
+            android:textSize="12sp" />
     </LinearLayout>
     
     <ScrollView
