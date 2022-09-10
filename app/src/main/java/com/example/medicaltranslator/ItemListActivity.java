@@ -44,7 +44,7 @@ public class ItemListActivity extends MainActivity {
         db = new MedicalBaseHelper(getApplicationContext()).getReadableDatabase();
 
 //        itemList_linearLayout = findViewById(R.id.item_lists_page);
-        recognize_product_name_txt = findViewById(R.id.recognized_product_name_etxt);
+        recognize_product_name_txt = findViewById(R.id.recognized_product_name_txt);
 
         //recognize image text, get cropped image's uri -> parse uri -> recognize
         String uri_result_string_in_main = getIntent().getStringExtra("uri");
