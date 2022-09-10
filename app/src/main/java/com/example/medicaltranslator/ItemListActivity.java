@@ -26,10 +26,11 @@ import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
 
+//This class used to display the searched medicine results
 public class ItemListActivity extends MainActivity {
     LinearLayout itemList_linearLayout;
     // TODO: Why EditText? Why not TextView?
-    EditText recognize_product_name_txt;
+    EditText recognize_product_name_txt; //show the recognize medicine name
 
     private SQLiteDatabase db;
 
@@ -44,18 +45,22 @@ public class ItemListActivity extends MainActivity {
 //        itemList_linearLayout = findViewById(R.id.item_lists_page);
         recognize_product_name_txt = findViewById(R.id.recognized_product_name_etxt);
 
+        //recognize image text, get cropped image's uri -> parse uri -> recognize
         String uri_result_string = getIntent().getStringExtra("uri");
         Uri my_uri = Uri.parse(uri_result_string);
         recognizeImageText(getApplicationContext(),my_uri);
 
 //        ItemListActivity itemListActivity = new ItemListActivity();
+        //set the text result
+        recognize_product_name_txt.setText(this.uri_result_string);
 
     }
 
-
+    //recognize image text function
     public void recognizeImageText(Context context, Uri uri) {
         TextRecognizer textRecognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
         try {
+            //import the image
             InputImage inputImage = InputImage.fromFilePath(context, uri);
 
             Task<Text> textResult = textRecognizer.process(inputImage)

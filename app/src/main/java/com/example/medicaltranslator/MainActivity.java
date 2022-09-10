@@ -68,14 +68,14 @@ public class MainActivity extends SideMenuBaseActivity {
 
     private static final int CAMERA_REQUEST_CODE = 200;
     private static final int STORAGE_REQUEST_CODE = 400;
-    private static final int IMAGE_PICK_GALLERY_CODE = 1000;
-    private static final int IMAGE_PICK_CAMERA_CODE = 1001;
+    private static final int IMAGE_PICK_GALLERY_CODE = 100;
+    private static final int IMAGE_PICK_CAMERA_CODE = 101;
 //    private final String SAMPLE_CROPPED_IMG = "CropImage";
 //    private ImageView imgView;
-    private TextRecognizer textRecognizer;
-    Uri uri_image;
-    Uri uri_result;
-    String uri_result_string = "";
+//    private TextRecognizer textRecognizer;
+    Uri uri_image; //original image uri
+    Uri uri_result; //cropped image uri
+    String uri_result_string = "";  //hold the uri by string
     String camera_permission[];
     String storage_permission[];
 //    Bitmap bitmap = null;
@@ -128,10 +128,12 @@ public class MainActivity extends SideMenuBaseActivity {
 //            }
 //        });
 
+        //main search button
         searchImage_btn = findViewById(R.id.search_main_btn);
         searchImage_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (checkCameraPermission()) {
+                    //pick up the camera
                     pickCamera();
 //                    recognizeImageText();
                 }
@@ -245,12 +247,14 @@ public class MainActivity extends SideMenuBaseActivity {
 //        CloseDrawer(drawerLayout);
 //    }
 
+    //display menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu,menu);
         return true;
     }
 
+    //upload image button (menu item click action)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 //        if(drawerToggle.onOptionsItemSelected(item)) {
@@ -271,8 +275,10 @@ public class MainActivity extends SideMenuBaseActivity {
 //    }
 
     private void showImageImportDialog() {
+        //items show in dialog
         String[] items = {" Camera", " Gallery"};
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        //set title
         dialog.setTitle("Select Image");
         dialog.setItems(items, new DialogInterface.OnClickListener() {
             @Override
@@ -304,11 +310,11 @@ public class MainActivity extends SideMenuBaseActivity {
 
 
 
-
+    //pick image from gallery
     private void pickGallery() {
         Intent gallery_intent = new Intent(Intent.ACTION_PICK);
 //        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        gallery_intent.setType("image/*");
+        gallery_intent.setType("image/*"); //set type to image
         startActivityForResult(gallery_intent,IMAGE_PICK_GALLERY_CODE);
 //        galleryActivityResultLauncher.launch(intent);
     }
@@ -329,6 +335,7 @@ public class MainActivity extends SideMenuBaseActivity {
 //            }
 //    );
 
+    //take image from camera and save it in storage
     private void pickCamera() {
         ContentValues values = new ContentValues();
         values.put(MediaStore.Images.Media.TITLE,"NewPicture");
@@ -411,6 +418,7 @@ public class MainActivity extends SideMenuBaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             if (requestCode == IMAGE_PICK_GALLERY_CODE) {
+                //use crop tools
                 CropImage.activity(data.getData())
                         .setGuidelines(CropImageView.Guidelines.ON)
                         .setCropMenuCropButtonIcon(R.drawable.ic_check_32)
@@ -449,6 +457,7 @@ public class MainActivity extends SideMenuBaseActivity {
 //                final Throwable cropError = UCrop.getError(data);
 //            }
 //        }
+
         //get cropped image
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
             CropImage.ActivityResult crop_result = CropImage.getActivityResult(data);

@@ -17,6 +17,7 @@ public class TheAdapterForHelp extends BaseExpandableListAdapter {
     List<String> list_group;
     HashMap<String, List<String>> list_items;
 
+    //constructor
     public TheAdapterForHelp(Context context, List<String> list_group, HashMap<String, List<String>> list_items)
     {
         this.context = context;
@@ -70,6 +71,7 @@ public class TheAdapterForHelp extends BaseExpandableListAdapter {
         TextView textView = view.findViewById(R.id.help_list_parent);
         textView.setText(parent_group);
 
+        //set the rotation of expand arrow
         ImageView imageView = (ImageView) view.findViewById(R.id.help_list_parent_arrow);
         if (isExpanded == true) {
             imageView.setRotation(180);

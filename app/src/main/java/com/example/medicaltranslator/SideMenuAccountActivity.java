@@ -20,6 +20,7 @@ public class SideMenuAccountActivity extends SideMenuBaseActivity {
         super.onCreate(savedInstanceState);
         sideMenuAccountBinding = SideMenuAccountBinding.inflate(getLayoutInflater());
         setContentView(sideMenuAccountBinding.getRoot());
+        //set the title name
         allocateActivityTitle("Account");
     }
 

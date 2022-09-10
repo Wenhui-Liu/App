@@ -37,6 +37,7 @@ public class SideMenuHelpActivity extends SideMenuBaseActivity {
         initialListData();
     }
 
+    //list the questions that can be expandable
     private void initialListData() {
         list_group.add(getString(R.string.questionA_1));
         list_group.add(getString(R.string.questionA_2));
@@ -44,8 +45,9 @@ public class SideMenuHelpActivity extends SideMenuBaseActivity {
         list_group.add(getString(R.string.questionA_4));
         list_group.add(getString(R.string.questionA_5));
 
-        String[] array;
-        List<String> list_q1 = new ArrayList<>();
+        //show answers of questions
+        String[] array; //hold answers
+        List<String> list_q1 = new ArrayList<>(); //set the answer to the corresponding question
         array = getResources().getStringArray(R.array.questionA_1);
         for (String question: array) {
             list_q1.add(question);
@@ -71,6 +73,7 @@ public class SideMenuHelpActivity extends SideMenuBaseActivity {
             list_q5.add(question);
         }
 
+        //add items into list
         list_items.put(list_group.get(0),list_q1);
         list_items.put(list_group.get(1),list_q2);
         list_items.put(list_group.get(2),list_q3);

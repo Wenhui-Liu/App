@@ -49,10 +49,12 @@
         <!-- android:name="com.yalantis.ucrop.UCropActivity" -->
         <!-- android:screenOrientation="portrait" -->
         <!-- android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> -->
+
+        <!-- ArthurHub: Android Image Cropper -->
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/CropTheme" />
-
+        <!-- declaration -->
         <meta-data
             android:name="com.google.mlkit.vision.DEPENDENCIES"
             android:value="ocr" />

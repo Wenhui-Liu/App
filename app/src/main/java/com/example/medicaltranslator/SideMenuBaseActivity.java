@@ -21,8 +21,10 @@ import com.google.android.material.navigation.NavigationView;
 
 public class SideMenuBaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+
     DrawerLayout side_menu_draw_layout;
     NavigationView menu_navigationView;
+    //set the side menu content
     @Override
     public void setContentView(View view) {
         side_menu_draw_layout = (DrawerLayout)getLayoutInflater().inflate(R.layout.side_menu_base,null);
@@ -30,6 +32,7 @@ public class SideMenuBaseActivity extends AppCompatActivity implements Navigatio
         side_menu_container.addView(view);
         super.setContentView(side_menu_draw_layout);
 
+        //set the same toolbar
         Toolbar toolbar = side_menu_draw_layout.findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
 //        TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.main_toolbar_title);
@@ -44,6 +47,7 @@ public class SideMenuBaseActivity extends AppCompatActivity implements Navigatio
         toggle.syncState();
     }
 
+    //select different item
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         side_menu_draw_layout.closeDrawer(GravityCompat.START);
@@ -74,16 +78,19 @@ public class SideMenuBaseActivity extends AppCompatActivity implements Navigatio
         return false;
     }
 
+    //set each item's own title
     protected void allocateActivityTitle(String title_string) {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(title_string);
         }
     }
 
+    //logout function
     public static void logout(Activity activity) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         builder.setTitle("Log Out");
         builder.setMessage("Are you sure you want to logout ?");
+        //close app
         builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
